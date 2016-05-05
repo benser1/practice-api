@@ -17,6 +17,7 @@
       Trail Name: <%= hike['name'] %><br />
       Length: <%= hike['activities']['length'.to_i]['length'] %> miles<br />
       Directions: <%= hike['directions'] %><br />
+      <iframe src= "https://maps.google.com/maps?q=<%= hike["lat"] %>,<%= hike["lon"] %>&hl=es;z=14&amp;output=embed"></iframe>
     </li> <br />
     <% end %>
   </ul>
