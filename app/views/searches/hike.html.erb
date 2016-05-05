@@ -1,0 +1,23 @@
+<h1>Search Hikes</h1>
+
+<%= form_tag '/hike' do %>
+  <%= label_tag :city %>
+  <%= text_field_tag :city %>
+  <%= label_tag :state %>
+  <%= text_field_tag :state %>
+  <%= submit_tag "Search" %>
+<% end %>
+
+<div>
+  <ul>
+    <% @search.each do |hike| %>
+    <li>
+      City: <%= hike['city'] %><br />
+      State: <%= hike['state'] %><br />
+      Trail Name: <%= hike['name'] %><br />
+      Length: <%= hike['activities']['length'.to_i]['length'] %> miles<br />
+      Directions: <%= hike['directions'] %><br />
+    </li> <br />
+    <% end %>
+  </ul>
+</div><br>
