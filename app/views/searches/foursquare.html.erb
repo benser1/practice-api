@@ -11,7 +11,14 @@
     <ul>
       <% @venues.each do |venue| %>
         <li>Name: <%= venue['name'] %><br />
-        Phone: <%= venue['contact']['formattedPhone'] %><br /></li><br />
+        <% if venue['contact']['formattedPhone'] %>
+        Phone: <%= venue['contact']['formattedPhone'] %><br />
+        <% else %>
+        <p>
+          No Phone Number Available
+        </p>
+        <% end %>
+        </li><br />
       <% end %>
     </ul>
   <% end %>
